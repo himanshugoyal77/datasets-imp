@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D3.js House Example</title>
+    <script type="text/javascript" src="/index.js"></script>
+    <style>
+      .white {
+        fill: white;
+      }
+
+      .green {
+        fill: green;
+      }
+
+      .orange {
+        fill: orange;
+      }
+
+      .border {
+        fill: none;
+        stroke: blue;
+        stroke-width: 2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="chart"></div>
+
+    <script>
+      const svg = d3
+        .select("#chart")
+        .append("svg")
+        .attr("width", 300)
+        .attr("height", 300);
+
+      svg
+        .append("rect")
+        .attr("x", 50)
+        .attr("y", 50)
+        .attr("width", 200)
+        .attr("height", 50)
+        .attr("class", "orange");
+      svg
+        .append("rect")
+        .attr("x", 50)
+        .attr("y", 1000)
+        .attr("width", 200)
+        .attr("height", 50)
+        .attr("class", "white");
+      svg
+        .append("circle")
+        .attr("cx", 150)
+        .attr("cy", 125)
+        .attr("r", 25)
+        .attr("class", "border");
+      // .attr("fill", "blue");
+      svg
+        .append("circle")
+        .attr("cx", 150)
+        .attr("cy", 125)
+        .attr("r", 5)
+        .attr("fill", "blue");
+      svg
+        .append("line")
+        .attr("x1", 150)
+        .attr("y1", 100)
+        .attr("x2", 150)
+        .attr("y2", 150)
+        .attr("stroke", "blue")
+        .attr("stroke-width", 2);
+      svg
+        .append("line")
+        .attr("x1", 125)
+        .attr("y1", 125)
+        .attr("x2", 175)
+        .attr("y2", 125)
+        .attr("stroke", "blue")
+        .attr("stroke-width", 2);
+      svg
+        .append("rect")
+        .attr("x", 50)
+        .attr("y", 150)
+        .attr("width", 200)
+        .attr("height", 50)
+        .attr("class", "green");
+    </script>
+  </body>
+</html>

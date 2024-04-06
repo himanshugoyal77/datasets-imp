@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D3.js House Example</title>
+    <script type="text/javascript" src="/index.js"></script>
+    <style>
+      .roof {
+        fill: #c0392b;
+      }
+
+      .house {
+        fill: #2980b9;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="chart"></div>
+
+    <script>
+      const colors = ["red", "green", "blue", "orange", "purple", "yellow"];
+      for (let i = 0; i < 10; i++) {
+        const svg = d3
+          .select("#chart")
+          .append("svg")
+          .attr("width", "200")
+          .attr("height", "200")
+          .attr("style", "margin: 10px")
+          .attr("style", "overflow: visible");
+
+        svg
+          .append("circle")
+          .attr("cx", Math.random() * 120)
+          .attr("cy", 50)
+          .attr("r", Math.random() * 60)
+          .attr("fill", colors[Math.floor(Math.random() * colors.length)]);
+      }
+    </script>
+  </body>
+</html>

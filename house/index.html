@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D3.js House Example</title>
+    <script type="text/javascript" src="/index.js"></script>
+    <style>
+      .roof {
+        fill: #c0392b;
+      }
+
+      .house {
+        fill: #2980b9;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="chart"></div>
+
+    <script>
+      const svg = d3
+        .select("#chart")
+        .append("svg")
+        .attr("width", 200)
+        .attr("height", 200);
+
+      svg
+        .append("rect")
+        .attr("x", 50)
+        .attr("y", 50)
+        .attr("width", 100)
+        .attr("height", 70)
+        .attr("class", "house");
+      svg
+        .append("polygon")
+        .attr("points", "50,50 150,50 100, 10")
+        .attr("class", "roof");
+    </script>
+  </body>
+</html>

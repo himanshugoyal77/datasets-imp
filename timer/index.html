@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, 
+				initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    .originalColor {
+      height: 100px;
+      width: 100px;
+    }
+    .darkerColor {
+      height: 100px;
+      width: 100px;
+    }
+  </style>
+  <body>
+    <p id="para"></p>
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+
+    <script>
+      const para = document.getElementById("para");
+
+      let func = function (e) {
+        console.log(e);
+        const div = document.createElement("div");
+        div.textContent = e;
+        para.appendChild(div);
+
+        if (e > 300) {
+          console.log("Timer stopped");
+          timer.stop();
+        }
+      };
+      // Delay of 2000ms
+      var timer = d3.timer(func, 2000);
+    </script>
+  </body>
+</html>
